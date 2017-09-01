@@ -7,8 +7,19 @@
 #
 #-------------------------------------------------------------------------------
 from __future__ import division
-from Tkinter import *
-import tkMessageBox
+try:
+    # for Python2
+    from Tkinter import *   ## notice capitalized T in Tkinter 
+except ImportError:
+    # for Python3
+    from tkinter import *   ## notice lowercase 't' in tkinter here
+try:
+    # for Python2
+    import tkMessageBox as tkMessageBox ## notice capitalized T in Tkinter 
+except ImportError:
+    # for Python3
+    import tkinter.messagebox as tkMessageBox ## notice lowercase 't' in tkinter here
+
 from PIL import Image, ImageTk
 import os
 import glob
